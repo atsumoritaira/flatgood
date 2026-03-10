@@ -395,4 +395,98 @@ body {
     box-shadow: 0 8px 16px rgba(255, 152, 0, 0.2);
 }
 
+/* --- 既存のスタイルを維持しつつ、以下を追記・調整 --- */
+
+/* Header Styles */
+.header {
+    background-color: #ffffff;
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.header nav a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+.header nav a:hover {
+    color: var(--primary-color);
+}
+
+/* Download Section Styles */
+.download-section {
+    padding: 80px 0;
+    background-color: var(--bg-light); /* Contactの前なので背景色を変えてメリハリをつける */
+    text-align: center;
+}
+
+.download-text {
+    margin-bottom: 2rem;
+    color: var(--text-dark);
+    font-size: 1.125rem;
+    line-height: 1.8;
+}
+
+.download-text span {
+    display: block;
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.download-button {
+    display: inline-block;
+    padding: 16px 48px;
+    background-color: #ff9800; /* HubSpotをイメージしたアクセントカラー */
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    border: 2px solid #ff9800;
+}
+
+.download-button:hover {
+    background-color: #e68900;
+    border-color: #e68900;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(255, 152, 0, 0.2);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .header .container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .header nav ul {
+        gap: 1rem;
+    }
+
+    .download-section {
+        padding: 60px 20px;
+    }
+}
+
 /* 最後の閉じカッコがないことを確認してください */
