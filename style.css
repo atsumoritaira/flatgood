@@ -367,21 +367,21 @@ body {
         padding: 0 1rem;
     }
 }
-/* --- 末尾の不要な } を削除し、以下に差し替え --- */
+/* --- 既存のコードの末尾、不要な } を消して以下に差し替え --- */
 
 .download-section {
     padding: 60px 0;
-    background-color: #ffffff; /* 白背景に統一 */
+    background-color: #ffffff; /* 実績セクション(白)と揃える、または var(--bg-light) で色を変えてもOK */
     text-align: center;
 }
 
 .download-button {
     display: inline-block;
     padding: 16px 48px;
-    background-color: #ff9800; /* HubSpotらしいオレンジ色を維持 */
+    background-color: #ff9800; /* HubSpotカラーのオレンジ */
     color: #ffffff;
     text-decoration: none;
-    border-radius: 8px; /* 他のボタンと角丸を合わせる */
+    border-radius: 8px; /* 他のボタンと共通の角丸 */
     font-weight: 600;
     font-size: 1rem;
     transition: all 0.3s ease;
@@ -394,3 +394,5 @@ body {
     transform: translateY(-2px);
     box-shadow: 0 8px 16px rgba(255, 152, 0, 0.2);
 }
+
+/* 最後の閉じカッコがないことを確認してください */
