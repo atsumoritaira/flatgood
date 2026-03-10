@@ -367,23 +367,30 @@ body {
         padding: 0 1rem;
     }
 }
+/* --- 末尾の不要な } を削除し、以下に差し替え --- */
 
 .download-section {
-    padding: 60px 20px;
-    background-color: #f9f9f9;
+    padding: 60px 0;
+    background-color: #ffffff; /* 白背景に統一 */
+    text-align: center;
 }
 
 .download-button {
     display: inline-block;
-    background-color: #ff9800;
-    color: white;
-    padding: 16px 40px;
+    padding: 16px 48px;
+    background-color: #ff9800; /* HubSpotらしいオレンジ色を維持 */
+    color: #ffffff;
     text-decoration: none;
-    border-radius: 4px;
+    border-radius: 8px; /* 他のボタンと角丸を合わせる */
     font-weight: 600;
-    transition: background-color 0.3s;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    border: 2px solid #ff9800;
 }
 
 .download-button:hover {
-    background-color: #fb8c00;
+    background-color: #e68900;
+    border-color: #e68900;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(255, 152, 0, 0.2);
 }
