@@ -1,6 +1,19 @@
-// nav items definition
-const NAV_ITEMS = [
-    { label: 'ホーム',             icon: '🏠', href: '../index.html' },
+// nav.js - 共通ナビゲーション生成 & アクティブタブ制御 & HubSpotトラッキング
+
+(function () {
+
+  // ========== HubSpot トラッキングコード（全ページ共通） ==========
+  var hsScript = document.createElement('script');
+  hsScript.type = 'text/javascript';
+  hsScript.id = 'hs-script-loader';
+  hsScript.async = true;
+  hsScript.defer = true;
+  hsScript.src = '//js.hs-scripts.com/YOUR_PORTAL_ID.js'; // ← ポータルIDに置き換える
+  document.head.appendChild(hsScript);
+
+  // ========== ナビゲーション定義 ==========
+  const NAV_ITEMS = [
+    { label: 'ホーム',             icon: '🏠', href: 'index.html',    root: true },
     { label: 'サービス',           icon: '⚙️', href: 'services.html' },
     { label: 'HubSpot導入',        icon: '🚀', href: 'hubspot.html' },
     { label: 'CRM設計',            icon: '🗂️', href: 'crm.html' },
@@ -11,35 +24,50 @@ const NAV_ITEMS = [
     { label: 'FAQ',                icon: '❓', href: 'faq.html' },
     { label: 'プロフィール',        icon: '👤', href: 'profile.html' },
     { label: 'お問い合わせ',        icon: '✉️', href: 'contact.html' },
-];
+  ];
 
-function buildHeader() {
-    const currentPage = location.pathname.split('/').pop() || 'index.html';
+  // ========== ナビゲーション生成 ==========
+  function buildHeader() {
+    // index.html（ルート）か pages/ 配下かを判定
+    const isRoot = !location.pathname.includes('/pages/');
+    const basePath = isRoot ? 'pages/' : '';
+    const logoHref = isRoot ? 'index.html' : '../index.html';
+
+    // 現在のファイル名を取得
+    const currentFile = location.pathname.split('/').pop() || 'index.html';
 
     const navLinks = NAV_ITEMS.map(item => {
-        const isActive = currentPage === item.href.replace('../','').replace('pages/','');
-        return `<a href="${item.href}" class="${isActive ? 'active' : ''}"><span class="nav-icon">${item.icon}</span>${item.label}</a>`;
+      // ホームリンクのhrefをルート/pages配下で切り替え
+      const href = item.root ? logoHref : basePath + item.href;
+      const isActive = currentFile === item.href;
+      return `<a href="${href}" class="${isActive ? 'active' : ''}"><span class="nav-icon">${item.icon}</span>${item.label}</a>`;
     }).join('');
 
-    const mobileLinks = NAV_ITEMS.map(item =>
-        `<a href="${item.href}">${item.icon} ${item.label}</a>`
-    ).join('');
+    const mobileLinks = NAV_ITEMS.map(item => {
+      const href = item.root ? logoHref : basePath + item.href;
+      return `<a href="${href}">${item.icon} ${item.label}</a>`;
+    }).join('');
 
-    document.querySelector('.header').innerHTML = `
-        <div class="header-inner">
-            <a href="../index.html" class="logo">flatgood</a>
-            <nav class="nav">${navLinks}</nav>
-            <button class="hamburger" id="hamburger" aria-label="メニュー">
-                <span></span><span></span><span></span>
-            </button>
-        </div>
-        <nav class="mobile-nav" id="mobileNav">${mobileLinks}</nav>
+    const header = document.querySelector('.header');
+    if (!header) return;
+
+    header.innerHTML = `
+      <div class="header-inner">
+        <a href="${logoHref}" class="logo">flatgood</a>
+        <nav class="nav">${navLinks}</nav>
+        <button class="hamburger" id="hamburger" aria-label="メニュー">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+      <nav class="mobile-nav" id="mobileNav">${mobileLinks}</nav>
     `;
 
     document.getElementById('hamburger').addEventListener('click', function () {
-        this.classList.toggle('open');
-        document.getElementById('mobileNav').classList.toggle('open');
+      this.classList.toggle('open');
+      document.getElementById('mobileNav').classList.toggle('open');
     });
-}
+  }
 
-document.addEventListener('DOMContentLoaded', buildHeader);
+  document.addEventListener('DOMContentLoaded', buildHeader);
+
+})();
