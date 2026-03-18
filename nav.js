@@ -58,4 +58,16 @@
 
   document.addEventListener('DOMContentLoaded', buildHeader);
 
+  // ここに追加！
+  (function() {
+    var hs = document.createElement('script');
+    hs.id = 'hs-script-loader';
+    hs.async = true;
+    hs.defer = true;
+    hs.src = '//js.hs-scripts.com/51009495.js'; // ★自分のIDに変える
+    document.body.appendChild(hs);
+  })();
+
+})();
+
 })();
