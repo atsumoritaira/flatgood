@@ -16,9 +16,7 @@
   ];
 
   function initAll() {
-    // 1. ヘッダー生成
     buildHeader();
-    // 2. HubSpot読み込み
     loadHubSpot();
   }
 
@@ -69,14 +67,12 @@
     hs.async = true;
     hs.defer = true;
     hs.src = '//js.hs-scripts.com/51009495.js';
-    // 安全にheadまたはbodyに追加
     (document.head || document.body).appendChild(hs);
   }
 
-  // DOMContentLoadedを待つが、すでに読み込み済みなら即実行
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initAll);
   } else {
     initAll();
   }
-})();
+})(); // ← この閉じカッコが特に重要です！
