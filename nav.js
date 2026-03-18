@@ -58,16 +58,18 @@
 
   document.addEventListener('DOMContentLoaded', buildHeader);
 
-  // ここに追加！
+// HubSpot Tracking Code (nav.jsに追加)
   (function() {
     var hs = document.createElement('script');
-    hs.id = 'hs-script-loader';
+    hs.type = 'text/javascript';
     hs.async = true;
     hs.defer = true;
-    hs.src = '//js.hs-scripts.com/51009495.js'; // ★自分のIDに変える
-    document.body.appendChild(hs);
+    hs.id = 'hs-script-loader';
+    hs.src = '//js.hs-scripts.com/51009495.js'; // index.htmlにあったIDを反映
+    var s = document.getElementsByTagName('script')[0];
+    if (s) {
+      s.parentNode.insertBefore(hs, s);
+    } else {
+      document.head.appendChild(hs);
+    }
   })();
-
-})();
-
-})();
