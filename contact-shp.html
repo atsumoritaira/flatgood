@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="style.css">
     <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/5769756.js"></script>
     <style>
         .contact-form-wrap {
@@ -70,12 +70,14 @@
 
 <h2 class="section-title" style="margin-top:48px;">SHPお問い合わせフォーム</h2>
 <div class="contact-form-wrap">
-    <script src="https://js.hsforms.net/forms/embed/5769756.js" defer></script>
-    <div class="hs-form-frame" 
-         data-region="na1" 
-         data-form-id="2df27e19-83ef-44f7-9f32-2789b106ba20" 
-         data-portal-id="5769756">
-    </div>
+    <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+    <script>
+      hbspt.forms.create({
+        region: "na1",
+        portalId: "5769756",
+        formId: "2df27e19-83ef-44f7-9f32-2789b106ba20"
+      });
+    </script>
 </div>
 
         <h2 class="section-title" style="margin-top:48px;">こんな内容でもご相談ください</h2>
@@ -98,6 +100,6 @@
     <footer class="footer">
         <div class="container"><p>&copy; 2026 flatgood. All rights reserved.</p></div>
     </footer>
-    <script src="../nav.js"></script>
+    <script src="nav.js"></script>
 </body>
 </html>
