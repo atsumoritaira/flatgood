@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お問い合わせ | flatgood</title>
+    <meta name="description" content="HubSpot導入・CRM設計のご相談はこちらから。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/51009495.js"></script>
+    <style>
+        .contact-form-wrap {
+            background: var(--bg-light);
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+        }
+        .contact-info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .contact-info-card {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+        .contact-info-card .icon { font-size: 2rem; margin-bottom: 0.75rem; }
+        .contact-info-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .contact-info-card p { font-size: 0.9rem; color: var(--text-light); }
+        .contact-info-card a { color: var(--primary-color); text-decoration: none; }
+        .contact-info-card a:hover { text-decoration: underline; }
+
+        /* HubSpotフォーム フィールド間マージン 1.5倍 */
+        .hs-form-field {
+            margin-bottom: 1.5em !important;
+        }
+    </style>
+</head>
+<body>
+    <header class="header"></header>
+
+    <section class="page-hero">
+        <div class="container">
+            <h1>お問い合わせ</h1>
+            <p>ご相談・ご質問はお気軽にどうぞ。1営業日以内にご返信します。</p>
+        </div>
+    </section>
+
+    <main class="page-main">
+        <h2 class="section-title">ご連絡方法</h2>
+
+        <div class="contact-info-grid">
+            <div class="contact-info-card">
+                <div class="icon">✉️</div>
+                <h3>メール</h3>
+                <p><a href="mailto:contact@flatgood.biz">contact@flatgood.biz</a></p>
+            </div>
+            <div class="contact-info-card">
+                <div class="icon">📋</div>
+                <h3>無料資料</h3>
+                <p><a href="https://hubs.ly/Q04679Tb0" target="_blank">資料ダウンロードはこちら</a></p>
+            </div>
+            <div class="contact-info-card">
+                <div class="icon">⏰</div>
+                <h3>対応時間</h3>
+                <p>平日 9:00〜18:00<br>（土日祝除く）</p>
+            </div>
+        </div>
+
+        <h2 class="section-title" style="margin-top:48px;">お問い合わせフォーム</h2>
+        <div class="contact-form-wrap">
+            <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+            <script>
+                hbspt.forms.create({
+                    portalId: "51009495",
+                    formId: "f69c44d0-91b7-401c-a833-9a2db14966fa",
+                    region: "na1"
+                });
+            </script>
+        </div>
+
+        <h2 class="section-title" style="margin-top:48px;">こんな内容でもご相談ください</h2>
+        <div class="content-grid">
+            <div class="content-card">
+                <h3>💬 まだ課題が整理できていない</h3>
+                <p>「なんとなくCRMを改善したい」という段階でも大丈夫です。ヒアリングを通じて一緒に整理します。</p>
+            </div>
+            <div class="content-card">
+                <h3>💴 予算感がわからない</h3>
+                <p>ご予算に合わせて支援範囲を調整することも可能です。まずはお気軽にご相談ください。</p>
+            </div>
+            <div class="content-card">
+                <h3>🔍 他社との比較検討中</h3>
+                <p>もちろん歓迎です。flatgoodの特徴・強みをお伝えした上で判断いただければ幸いです。</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container"><p>&copy; 2026 flatgood. All rights reserved.</p></div>
+    </footer>
+    <script src="../nav.js"></script>
+</body>
+</html>
