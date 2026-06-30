@@ -13,6 +13,7 @@
     { label: 'FAQ', icon: '❓', href: 'faq.html' },
     { label: 'プロフィール', icon: '👤', href: 'profile.html' },
     { label: 'お問い合わせ', icon: '✉️', href: 'contact.html' },
+    { label: '資料ダウンロード', icon: '📥', href: 'pages/download.html' }
   ];
 
   function initAll() {
